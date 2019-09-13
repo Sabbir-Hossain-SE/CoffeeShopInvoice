@@ -157,6 +157,7 @@
             this.addressField.Name = "addressField";
             this.addressField.Size = new System.Drawing.Size(165, 20);
             this.addressField.TabIndex = 7;
+
             // 
             // contactField
             // 

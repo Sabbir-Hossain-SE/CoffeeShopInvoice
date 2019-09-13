@@ -26,9 +26,9 @@ namespace assignment2
         private void button1_Click(object sender, EventArgs e)
         {
             string name = cusNameField.Text, contact = contactField.Text, address = addressField.Text, order = orderOption.Text, quantity1 = quantityField.Text;
-            int quantity =0, hotP = 90, regularP = 80, blackP = 120, coldP = 100, price;
-            bool flagQuantity = Regex.IsMatch(quantity1, "[0-9]{1,}$"), flagContact = Regex.IsMatch(contact, "[0-9]{11,11}$"),pivCon=true,pivQuan=true;
-            if (name.Length==0|| contact.Length==0|| address.Length == 0 || order.Length == 0 || quantity1.Length == 0|| flagQuantity==false|| flagContact==false)
+            int quantity = 0, hotP = 90, regularP = 80, blackP = 120, coldP = 100, price;
+            bool flagQuantity = Regex.IsMatch(quantity1, "[0-9]{1,}$"), flagContact = Regex.IsMatch(contact, "[0-9]{11,11}$"), pivCon = true, pivQuan = true;
+            if (name.Length == 0 || contact.Length == 0 || address.Length == 0 || order.Length == 0 || quantity1.Length == 0 || flagQuantity == false || flagContact == false)
             {
                 if (name.Length == 0)
                 {
@@ -48,9 +48,9 @@ namespace assignment2
                     if (flagContact == false && contact.Length != 0)
                     {
                         alertContact.Text = "*Input incorrect syntax, use number only & use just 11 digits.";
-                       
+
                     }
-                    else 
+                    else
                     {
                         alertContact.Text = "";
                     }
@@ -97,17 +97,17 @@ namespace assignment2
                 quantity = Convert.ToInt32(quantity1);
 
 
-                if (order == "black")
+                if (order.Equals("Black"))
                 {
                     price = blackP * quantity;
                     invoice.Text = price.ToString();
                 }
-                else if (order == "cold")
+                else if (order.Equals("Cold"))
                 {
                     price = coldP * quantity;
 
                 }
-                else if (order == "hot")
+                else if (order.Equals("Hot"))
                 {
                     price = hotP * quantity;
 
@@ -118,7 +118,7 @@ namespace assignment2
                 }
                 invoice.Text = "\n\n\n\n\n  Name\t\t: " + name + "\n  Contact Number  : " + contact + "\n  Address\t\t: " + address + "\n  Order Item\t   :\t" + order + "\n  Quantity\t\t:\t" + quantity + "\n  Total Price  (" + quantity + "*" + price / quantity + "):\t\t" + price;
             }
-           
+
         }
 
 
@@ -127,4 +127,3 @@ namespace assignment2
 
 
 
- 
